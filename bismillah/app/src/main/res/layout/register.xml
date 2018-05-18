@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/putih"
+            android:text="PENDAFTARAN"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="@android:style/TextAppearance.Large"/>
+
+        <EditText
+            android:id="@+id/txt_nim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NIM"
+            android:textColor="@color/putih"
+            android:textColorHint="@color/putihHint"
+            android:textAppearance="@android:style/TextAppearance.Medium"/>
+
+        <EditText
+            android:id="@+id/txt_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Nama Pengguna"
+            android:textColorHint="@color/putihHint"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:textColor="@color/putih"/>
+
+        <EditText
+            android:id="@+id/txt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Password"
+            android:textColorHint="@color/putihHint"
+            android:textColor="@color/putih"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/txt_confirm_password"
+            android:textColor="@color/putih"
+            android:textColorHint="@color/putihHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Ulangi Password" />
+
+        <EditText
+            android:id="@+id/txt_noHP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Nomor Telepon"
+            android:textColorHint="@color/putihHint"
+            android:textColor="@color/putih"/>
+
+        <EditText
+            android:id="@+id/txt_alamat"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Alamat"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:textColorHint="@color/putihHint"
+            android:textColor="@color/putih"
+            />
+
+        <RadioGroup
+            android:id="@+id/rdJK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/pria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pria"
+                android:textColor="@color/putih"/>
+
+            <RadioButton
+                android:id="@+id/wanita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wanita"
+                android:textColor="@color/putih"
+                android:layout_marginHorizontal="20dp"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#448AFF"
+                android:textColor="@color/putih"
+                android:text="Daftar"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="20dp"/>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#448aff"
+                android:text="Login"
+                android:textStyle="bold"
+                android:textColor="@color/putih"
+                android:layout_marginHorizontal="20dp"/>
+
+        </LinearLayout>
+
+</RelativeLayout>
