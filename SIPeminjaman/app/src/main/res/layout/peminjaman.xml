@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Peminjaman"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Form Peminjaman :"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/nmGD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:hint="Nama Gedung"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <EditText
+            android:id="@+id/keperluan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:hint="Keperluan"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/lamaPinjam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorPrimary"
+                android:clickable="false"
+                android:hint="Durasi"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <NumberPicker
+                android:id="@+id/numDur"
+                android:layout_width="20dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="5dp"
+                android:scrollIndicators="none"
+                android:showDividers="middle" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:backgroundTint="@color/colorPrimary"
+                android:clickable="false"
+                android:hint="Tanggal Pinjam" />
+
+            <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@color/colorPrimary"
+                android:src="@android:drawable/ic_menu_my_calendar" />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:gravity="top"
+            android:hint="Catatan"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Fasilitas :"
+                android:layout_gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:onClick="tambahFasilitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:background="@color/colorPrimary"
+                android:src="@android:drawable/ic_menu_add" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:background="@color/colorPrimary"
+                android:src="@android:drawable/ic_menu_close_clear_cancel" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_marginHorizontal="10dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/fasilitas"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:entries="@array/angka"/>
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/putih">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Hapus" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Ajukan"
+            android:onClick="ajukan"/>
+    </LinearLayout>
+
+</RelativeLayout>

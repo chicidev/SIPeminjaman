@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context="com.example.kelompok1.peminjamangedung.Profil">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Data Diri :"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        android:gravity="center_vertical"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Nama"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        <EditText
+            android:id="@+id/Nama"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Nama Anda"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        <EditText
+            android:id="@+id/Usernama"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Username Anda"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Password Anda"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="No HP."
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        <EditText
+            android:id="@+id/Hp"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="No HP"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Alamat"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        <EditText
+            android:id="@+id/Alamat"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:gravity="top"
+            android:text="Alamat Anda"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis Kelamin"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:text="Pria"/>
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:text="Wanita"/>
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubah"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simpan"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

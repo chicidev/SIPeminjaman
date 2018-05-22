@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#006CB1</color>
+    <color name="colorPrimaryDarkas">#303F9F</color>
+    <color name="colorPrimaryDark">#006CB1</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="putih">#FFFFFF</color>
+    <color name="putihHint">#cdffffff</color>
+</resources>
