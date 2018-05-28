@@ -15,6 +15,7 @@ public class Peminjaman extends AppCompatActivity {
     NumberPicker np;
     LinearLayout fasilitas,base;
     Spinner edtFas,edtFas1;
+    private int fas = 1, tot = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,27 +30,37 @@ public class Peminjaman extends AppCompatActivity {
         np.setMinValue(1);
         np.setMaxValue(24);
         np.setWrapSelectorWheel(false);
+        layoutSetup();
     }
 
     public void layoutSetup(){
         int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,10,getResources().getDisplayMetrics());
         fasilitas = new LinearLayout(this);
-        edtFas = new Spinner(this);
-        edtFas1 = new Spinner(this);
+        fasilitas.setBackground(getDrawable(R.drawable.border));
+        edtFas = new Spinner(this,Spinner.MODE_DIALOG);
+        edtFas1 = new Spinner(this, Spinner.MODE_DIALOG);
         fasilitas.setOrientation(LinearLayout.HORIZONTAL);
-        fasilitas.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        LinearLayout.LayoutParams mgn1 = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT,2f);
+        LinearLayout.LayoutParams mgn = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        mgn.setMargins(margin,margin,margin,margin);
+        fasilitas.setLayoutParams(mgn);
+        LinearLayout.LayoutParams mgn1 = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT,4f);
         LinearLayout.LayoutParams mgn2 = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT,1f);
 
-        mgn1.setMargins(10,10,10,10);
-        mgn2.setMargins(10,10,10,10);
-        ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.angka,android.R.layout.simple_spinner_item);
+       // mgn1.setMargins(margin,margin,margin,margin);
+       // mgn2.setMargins(margin,margin,margin,margin);
+        ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.fasilitas,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> adapter2= ArrayAdapter.createFromResource(this,R.array.angka,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         edtFas.setLayoutParams(mgn1);
         edtFas.setAdapter(adapter);
+        edtFas.setId(fas);
+        fas++;
         fasilitas.addView(edtFas);
         edtFas1.setLayoutParams(mgn2);
-        edtFas1.setAdapter(adapter);
+        edtFas1.setAdapter(adapter2);
+        edtFas1.setId(tot);
+        tot++;
         fasilitas.addView(edtFas1);
         base.addView(fasilitas);
 

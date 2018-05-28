@@ -1,5 +1,5 @@
 package com.K1.sipeminjaman;
 
 public class server {
-    public static final String URL = "http://192.168.43.127/CodeIgniter/";
+    public static final String URL = "https://peminjamangedung.000webhostapp.com/android/";
 }

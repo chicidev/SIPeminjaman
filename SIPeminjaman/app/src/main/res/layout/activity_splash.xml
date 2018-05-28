@@ -37,10 +37,10 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="@dimen/pad_body" />
+        android:layout_marginBottom="50dp" />
 
 </RelativeLayout>

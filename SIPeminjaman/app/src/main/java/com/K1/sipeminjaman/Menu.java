@@ -19,7 +19,7 @@ public class Menu extends AppCompatActivity {
 
         switch (menu){
             case "profil" :
-                intent = new Intent(this,Peminjaman.class);
+                intent = new Intent(this,Profil.class);
                 startActivity(intent);
                 break;
             case "pinjam" :

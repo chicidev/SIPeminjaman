@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="com.example.kelompok1.peminjamangedung.Profil">
+    tools:context=".Profil">
 
     <TextView
         android:id="@+id/textView6"
@@ -27,59 +27,44 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textColor="#de000000"
+            android:text="NIM"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        <EditText
+            android:id="@+id/NIM"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            android:textColor="@drawable/edit_text_selector"
+            android:hint="NIM Anda"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:text="Nama"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
         <EditText
-            android:id="@+id/Nama"
+            android:id="@+id/Name"
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="Nama Anda"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            android:hint="Nama Anda"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Username"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
-        <EditText
-            android:id="@+id/Usernama"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:text="Username Anda"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Password"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
-        <EditText
-            android:id="@+id/Password"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:text="Password Anda"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,8 +82,10 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:clickable="false"
-            android:text="No HP"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            android:inputType="none"
+            android:hint="No HP"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
     </LinearLayout>
 
@@ -117,11 +104,12 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:inputType="textMultiLine"
-            android:lines="4"
+            android:lines="5"
             android:gravity="top"
-            android:text="Alamat Anda"
+            android:hint="Alamat Anda"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
     </LinearLayout>
 
@@ -138,19 +126,23 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
 
         <RadioGroup
+            android:id="@+id/rdG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:enabled="true"
+                android:clickable="false"
+                android:id="@+id/rdP"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:text="Pria"/>
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/rdW"
+                android:clickable="false"
                 android:layout_width="96dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
@@ -167,19 +159,22 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_ubah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ubah"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
+            android:onClick="ubah"
             android:background="@color/colorPrimary"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_simpan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Simpan"
+            android:onClick="simpan"
+            android:enabled="false"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:background="@color/colorPrimary"/>

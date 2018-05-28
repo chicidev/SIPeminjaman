@@ -39,9 +39,11 @@ public class Login extends AppCompatActivity {
 
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
-
     public final static String TAG_USERNAME = "username";
     public final static String TAG_ID = "nim";
+    public final static String TAG_HP = "noHP";
+    public final static String TAG_JK = "jk";
+    public final static String TAG_ALAMAT = "alamat";
 
     String tag_json_obj = "json_obj_req";
 
@@ -145,6 +147,9 @@ public class Login extends AppCompatActivity {
                     if (success == 1) {
                         String username = jObj.getString(TAG_USERNAME);
                         String nim = jObj.getString(TAG_ID);
+                        String nohp = jObj.getString(TAG_HP);
+                        String jk = jObj.getString(TAG_JK);
+                        String alamat = jObj.getString(TAG_ALAMAT);
 
                         Log.e("Successfully Login!", jObj.toString());
 
@@ -155,6 +160,9 @@ public class Login extends AppCompatActivity {
                         editor.putBoolean(session_status, true);
                         editor.putString(TAG_ID, nim);
                         editor.putString(TAG_USERNAME, username);
+                        editor.putString(TAG_HP, nohp);
+                        editor.putString(TAG_JK, jk);
+                        editor.putString(TAG_ALAMAT, alamat);
                         editor.commit();
 
                         // Memanggil main activity

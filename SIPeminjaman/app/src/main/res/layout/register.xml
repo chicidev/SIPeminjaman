@@ -60,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:inputType="textPassword"
             android:hint="Ulangi Password" />
 
         <EditText
@@ -119,7 +120,7 @@
                 android:id="@+id/btn_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#448AFF"
+                android:background="@color/colorAccent"
                 android:textColor="@color/putih"
                 android:text="Daftar"
                 android:textStyle="bold"
@@ -129,7 +130,7 @@
                 android:id="@+id/btn_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#448aff"
+                android:background="@color/colorAccent"
                 android:text="Login"
                 android:textStyle="bold"
                 android:textColor="@color/putih"

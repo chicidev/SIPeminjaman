@@ -2,12 +2,12 @@
     <string name="app_name">SIPeminjaman</string>
     <string name="full_name">SISTEM INFORMASI PEMINJAMAN GEDUNG</string>
     <string name="poltek">POLITEKNIK NEGERI JEMBER</string>
-    <array name="fasilitas">
+    <string-array name="fasilitas">
         <item>Kursi Lipat</item>
         <item>Meja Makan</item>
         <item>Petugas</item>
-    </array>
-    <array name="angka">
+    </string-array>
+    <string-array name="angka">
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -38,5 +38,5 @@
         <item>28</item>
         <item>29</item>
         <item>30</item>
-    </array>
+    </string-array>
 </resources>

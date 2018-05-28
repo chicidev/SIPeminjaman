@@ -6,94 +6,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:padding="@dimen/pad_body"
     tools:context=".Login">
 
     <EditText
         android:id="@+id/txt_username"
-        android:layout_width="284dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="212dp"
-        android:ems="10"
         android:inputType="textPersonName"
-        android:text="USERNAME"
+        android:hint="Username"
+        android:textColorHint="@color/putih"
         android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_above="@id/txt_password"/>
 
     <EditText
         android:id="@+id/txt_password"
-        android:layout_width="286dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="185dp"
-        android:ems="10"
+        android:layout_above="@id/btn_login"
         android:inputType="textPassword"
-        android:text="Password"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="@id/txt_username"
-        app:layout_constraintTop_toBottomOf="@id/txt_username"/>
+        android:layout_marginBottom="30dp"
+        android:hint="Password"
+        android:textColorHint="@color/putih"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="50dp"
         android:background="@color/colorAccent"
         android:text="LOGIN"
         android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="39dp"
-        android:text="
-          SISTEM INFORMASI
-        PEMINJAMAN GEDUNG
-                    POLIJE"
+        android:gravity="center_horizontal"
+        android:text="SISTEM INFORMASI PEMINJAMAN GEDUNG POLITEKNIK NEGERI JEMBER"
         android:textColor="#ffff"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="60dp" />
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="@dimen/pad_body"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView"
+        android:src="@drawable/logo"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="18dp"
         android:text="Belum terdaftar? Klik untuk "
         android:textColor="@android:color/white"
-        android:textSize="15dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="458dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp" />
+        android:textSize="15sp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp" />
 
     <Button
         android:id="@+id/btn_register"
-        android:layout_width="70dp"
+        android:layout_width="50dp"
         android:layout_height="23dp"
         android:layout_alignTop="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
+        android:gravity="center_vertical"
         android:background="@color/colorPrimary"
         android:text="Daftar"
+        android:textAllCaps="false"
+        android:textSize="15sp"
         android:textColor="@android:color/holo_orange_light"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="450dp"
-        android:layout_toRightOf="@+id/textView2" />
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_alignBottom="@id/textView2"/>
 </RelativeLayout>
