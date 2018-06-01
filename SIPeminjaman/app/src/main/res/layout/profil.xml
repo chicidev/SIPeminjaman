@@ -35,9 +35,7 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:clickable="false"
-            android:focusableInTouchMode="false"
-            android:focusable="false"
+            android:enabled="false"
             android:textColor="@drawable/edit_text_selector"
             android:hint="NIM Anda"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
@@ -59,8 +57,7 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:focusableInTouchMode="false"
-            android:focusable="false"
+            android:enabled="false"
             android:hint="Nama Anda"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
     </LinearLayout>
@@ -82,9 +79,9 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:focusableInTouchMode="false"
-            android:focusable="false"
-            android:inputType="none"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="13"
             android:hint="No HP"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
     </LinearLayout>
@@ -104,8 +101,7 @@
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="wrap_content"
-            android:focusableInTouchMode="false"
-            android:focusable="false"
+            android:enabled="false"
             android:inputType="textMultiLine"
             android:lines="5"
             android:gravity="top"
@@ -175,6 +171,7 @@
             android:text="Simpan"
             android:onClick="simpan"
             android:enabled="false"
+            android:textColor="@color/putih"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:background="@color/colorPrimary"/>

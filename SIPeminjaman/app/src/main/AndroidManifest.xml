@@ -24,15 +24,24 @@
         </activity>
         <activity
             android:name=".Menu"
+            android:label="Menu"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Peminjaman"
-            android:label="Peminjaman"/>
-        <activity android:name=".Login"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".Register"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".Profil"
-            android:label="Profil"></activity>
+        <activity
+            android:name=".Peminjaman"
+            android:label="Peminjaman" />
+        <activity
+            android:name=".Login"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".Register"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".Profil"
+            android:label="Profil" />
+        <activity
+            android:name=".Riwayat"
+            android:label="Riwayat Peminjaman" />
+        <activity android:name=".InfoJadwal"></activity>
     </application>
 
 </manifest>

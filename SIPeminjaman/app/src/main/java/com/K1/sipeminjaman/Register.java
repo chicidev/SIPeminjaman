@@ -32,7 +32,7 @@ public class Register extends AppCompatActivity {
     int success;
     ConnectivityManager conMgr;
 
-    private String url = server.URL + "register.php";
+    private String url = Res.URL + "register.php";
     private static final String TAG = Register.class.getSimpleName();
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
@@ -70,9 +70,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                intent = new Intent(Register.this, Login.class);
                 finish();
-                startActivity(intent);
             }
         });
 
@@ -146,6 +144,8 @@ public class Register extends AppCompatActivity {
                         txt_confirm_password.setText("");
                         txt_noHP.setText("");
                         txt_alamat.setText("");
+
+                        finish();
 
                     } else {
                         Toast.makeText(getApplicationContext(),

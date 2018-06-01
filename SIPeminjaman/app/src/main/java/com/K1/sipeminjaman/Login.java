@@ -17,12 +17,11 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
+import static com.K1.sipeminjaman.Res.*;
 
 public class Login extends AppCompatActivity {
     ProgressDialog pDialog;
@@ -33,61 +32,37 @@ public class Login extends AppCompatActivity {
     int success;
     ConnectivityManager conMgr;
 
-    private String url = server.URL + "login.php";
+    private String url = Res.URL + "login.php";
 
     private static final String TAG = Login.class.getSimpleName();
 
-    private static final String TAG_SUCCESS = "success";
-    private static final String TAG_MESSAGE = "message";
-    public final static String TAG_USERNAME = "username";
-    public final static String TAG_ID = "nim";
-    public final static String TAG_HP = "noHP";
-    public final static String TAG_JK = "jk";
-    public final static String TAG_ALAMAT = "alamat";
 
-    String tag_json_obj = "json_obj_req";
 
     SharedPreferences sharedpreferences;
     Boolean session = false;
     String nim, username;
-    public static final String my_shared_preferences = "my_shared_preferences";
-    public static final String session_status = "session_status";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+
+        // Cek session login jika TRUE maka langsung buka MainActivity
+        if (session) {
+            Intent intent = new Intent(this, Menu.class);
+            finish();
+            startActivity(intent);
+        }
+
         setContentView(R.layout.login);
 
         conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        {
-            if (conMgr.getActiveNetworkInfo() != null
-                    && conMgr.getActiveNetworkInfo().isAvailable()
-                    && conMgr.getActiveNetworkInfo().isConnected()) {
-            } else {
-                Toast.makeText(getApplicationContext(), "No Internet Connection",
-                        Toast.LENGTH_LONG).show();
-            }
-        }
 
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_register = (Button) findViewById(R.id.btn_register);
         txt_username = (EditText) findViewById(R.id.txt_username);
         txt_password = (EditText) findViewById(R.id.txt_password);
-
-        // Cek session login jika TRUE maka langsung buka MainActivity
-        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
-        session = sharedpreferences.getBoolean(session_status, false);
-        nim = sharedpreferences.getString(TAG_ID, null);
-        username = sharedpreferences.getString(TAG_USERNAME, null);
-
-        if (session) {
-            Intent intent = new Intent(this, Menu.class);
-            intent.putExtra(TAG_ID, nim);
-            intent.putExtra(TAG_USERNAME, username);
-            finish();
-            startActivity(intent);
-        }
-
 
         btn_login.setOnClickListener(new View.OnClickListener() {
 
@@ -119,7 +94,6 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 intent = new Intent(Login.this, Register.class);
-                finish();
                 startActivity(intent);
             }
         });

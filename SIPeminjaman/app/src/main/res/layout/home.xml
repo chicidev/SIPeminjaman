@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/putih"
     android:orientation="vertical"
+    android:padding="@dimen/pad_body"
     tools:context=".Menu">
 
     <LinearLayout
@@ -16,7 +17,8 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
@@ -43,7 +45,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
@@ -79,20 +82,21 @@
         android:gravity="center_vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/riwayat"
                 android:layout_width="132dp"
                 android:layout_height="119dp"
                 android:layout_marginHorizontal="25dp"
                 android:background="@color/putih"
                 android:onClick="pilihMenu"
                 android:scaleType="centerInside"
-                android:tag="register"
+                android:tag="riwayat"
                 app:srcCompat="@drawable/riwayat"
                 android:layout_marginBottom="@dimen/margin_menu"/>
 
@@ -107,17 +111,20 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/info"
+                android:tag="info"
                 android:layout_width="132dp"
                 android:layout_height="119dp"
                 android:layout_marginHorizontal="25dp"
                 android:background="@color/putih"
+                android:onClick="pilihMenu"
                 android:scaleType="fitCenter"
                 android:src="@drawable/question"
                 android:layout_marginBottom="@dimen/margin_menu"/>

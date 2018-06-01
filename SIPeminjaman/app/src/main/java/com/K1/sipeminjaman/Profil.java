@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,17 +22,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
-import static com.K1.sipeminjaman.Login.TAG_ID;
-import static com.K1.sipeminjaman.Login.TAG_USERNAME;
-import static com.K1.sipeminjaman.Login.TAG_ALAMAT;
-import static com.K1.sipeminjaman.Login.TAG_HP;
-import static com.K1.sipeminjaman.Login.TAG_JK;
-import static com.K1.sipeminjaman.Login.my_shared_preferences;
-import static com.K1.sipeminjaman.Login.session_status;
+import static com.K1.sipeminjaman.Res.*;
 
 public class Profil extends AppCompatActivity {
-    private static final String TAG_SUCCESS = "success";
-    private static final String TAG_MESSAGE = "message";
+
     private EditText nim,nama,hp,alamat;
     private RadioButton pria,wanita;
     private RadioGroup radioGroup;
@@ -39,7 +33,7 @@ public class Profil extends AppCompatActivity {
     private Boolean session = false;
     private String NIM,NAMA,HP,JK,ALAMAT;
     private ProgressDialog pDialog;
-    private String url = server.URL + "ubahProfil.php";
+    private String url = Res.URL + "ubahProfil.php";
     private String TAG;
     private ConnectivityManager conMgr;
     private String tag_json_obj = "json_obj_req";
@@ -49,6 +43,7 @@ public class Profil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profil);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         nim = (EditText)findViewById(R.id.NIM);
         nama = (EditText)findViewById(R.id.Name);
@@ -60,6 +55,7 @@ public class Profil extends AppCompatActivity {
         ubah = (Button)findViewById(R.id.btn_ubah);
         simpan = (Button)findViewById(R.id.btn_simpan);
         conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
         sharedpreferences = getSharedPreferences(my_shared_preferences,Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
         NIM = sharedpreferences.getString(TAG_ID, null);
@@ -251,7 +247,12 @@ public class Profil extends AppCompatActivity {
         AppController.getInstance().addToRequestQueue(strReq, tag_json_obj);
     }
 
-
-
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home : finish();
+                                     break;
+        }
+        return true;
+    }
 }
