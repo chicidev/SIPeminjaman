@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_bottom"
+    android:padding="@dimen/kf_item"
+    android:layout_margin="@dimen/kf_item">
+    <TextView
+        android:id="@+id/rw_gedung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Gedung"
+        android:textColor="@color/defaultText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/rw_keperluan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keperluan"
+        android:textColor="@color/defaultText"
+        android:layout_below="@id/rw_gedung"/>
+    <TextView
+        android:id="@+id/rw_tanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keperluan"
+        android:layout_marginRight="@dimen/pad_body"
+        android:textColor="@color/defaultText"
+        android:layout_toLeftOf="@id/rw_delete"
+        android:layout_above="@id/rw_status"/>
+    <TextView
+        android:id="@+id/rw_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:layout_marginRight="@dimen/pad_body"
+        android:textColor="@color/defaultText"
+        android:layout_toLeftOf="@id/rw_delete"
+        android:layout_alignBaseline="@id/rw_keperluan"/>
+    <ImageButton
+        android:id="@+id/rw_delete"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:background="@color/colorPrimary"/>
+</RelativeLayout>

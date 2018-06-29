@@ -27,7 +27,6 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textColor="#de000000"
             android:text="NIM"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
         <EditText
@@ -160,6 +159,7 @@
             android:layout_height="wrap_content"
             android:text="Ubah"
             android:layout_weight="1"
+            android:textColor="@color/putih"
             android:layout_marginHorizontal="10dp"
             android:onClick="ubah"
             android:background="@color/colorPrimary"/>

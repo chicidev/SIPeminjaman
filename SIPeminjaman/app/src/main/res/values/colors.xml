@@ -6,4 +6,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="putih">#FFFFFF</color>
     <color name="putihHint">#cdffffff</color>
+    <color name="abu2">#cddedede</color>
+    <color name="defaultText">#de000000</color>
 </resources>

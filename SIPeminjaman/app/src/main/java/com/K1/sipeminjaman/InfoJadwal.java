@@ -18,7 +18,7 @@ public class InfoJadwal extends AppCompatActivity {
         view = (WebView) this.findViewById(R.id.webView);
         view.getSettings().setJavaScriptEnabled(true);
         view.setWebViewClient(new MyBrowser());
-        view.loadUrl("http://youtube.com");
+        view.loadUrl(URL_info);
     }
 
     private class MyBrowser extends WebViewClient {

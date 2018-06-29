@@ -78,7 +78,7 @@ public class Menu extends AppCompatActivity {
             case "info" :
                 intent = new Intent(this,InfoJadwal.class);
                 startActivity(intent);
-            default         :
+            default     :
                 break;
 
         }

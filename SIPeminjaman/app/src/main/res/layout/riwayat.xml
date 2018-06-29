@@ -7,27 +7,21 @@
     tools:context="com.K1.sipeminjaman.Riwayat"
     android:orientation="vertical"
     android:id="@+id/rwyt">
+        <TextView
+            android:id="@+id/rw_noData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anda belum pernah melakukan peminjaman"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_margin="@dimen/pad_body"
+            android:visibility="gone"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="asasasasasasasasas"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="asasasasasasasasas"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="asasasasasasasasas"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="asasasasasasasasas"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"/>
+        <ListView
+            android:id="@+id/rw_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-
+        </ListView>
 </LinearLayout>

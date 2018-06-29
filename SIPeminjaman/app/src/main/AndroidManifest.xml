@@ -41,7 +41,11 @@
         <activity
             android:name=".Riwayat"
             android:label="Riwayat Peminjaman" />
-        <activity android:name=".InfoJadwal"></activity>
+        <activity android:name=".InfoJadwal" />
+        <activity
+            android:name=".Konfirmasi"
+            android:label="Konfirmasi" />
+        <activity android:name=".Detail_Riwayat"></activity>
     </application>
 
 </manifest>

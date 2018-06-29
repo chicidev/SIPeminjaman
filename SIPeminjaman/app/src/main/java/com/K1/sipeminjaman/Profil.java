@@ -33,7 +33,6 @@ public class Profil extends AppCompatActivity {
     private Boolean session = false;
     private String NIM,NAMA,HP,JK,ALAMAT;
     private ProgressDialog pDialog;
-    private String url = Res.URL + "ubahProfil.php";
     private String TAG;
     private ConnectivityManager conMgr;
     private String tag_json_obj = "json_obj_req";
@@ -54,6 +53,7 @@ public class Profil extends AppCompatActivity {
         radioGroup = (RadioGroup)findViewById(R.id.rdG);
         ubah = (Button)findViewById(R.id.btn_ubah);
         simpan = (Button)findViewById(R.id.btn_simpan);
+
         conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         sharedpreferences = getSharedPreferences(my_shared_preferences,Context.MODE_PRIVATE);
@@ -180,7 +180,7 @@ public class Profil extends AppCompatActivity {
         pDialog.setMessage("Sedang menyimpan ...");
         showDialog();
 
-        StringRequest strReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest strReq = new StringRequest(Request.Method.POST, URL_profil, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {

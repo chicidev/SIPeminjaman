@@ -20,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
+import static com.K1.sipeminjaman.Res.*;
 
 public class Register extends AppCompatActivity {
 
@@ -32,7 +33,6 @@ public class Register extends AppCompatActivity {
     int success;
     ConnectivityManager conMgr;
 
-    private String url = Res.URL + "register.php";
     private static final String TAG = Register.class.getSimpleName();
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
@@ -44,7 +44,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.register);
 
         conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        {
+
             if (conMgr.getActiveNetworkInfo() != null
                     && conMgr.getActiveNetworkInfo().isAvailable()
                     && conMgr.getActiveNetworkInfo().isConnected()) {
@@ -52,7 +52,7 @@ public class Register extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No Internet Connection",
                         Toast.LENGTH_LONG).show();
             }
-        }
+
 
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_register = (Button) findViewById(R.id.btn_register);
@@ -119,7 +119,7 @@ public class Register extends AppCompatActivity {
         pDialog.setMessage("Register ...");
         showDialog();
 
-        StringRequest strReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest strReq = new StringRequest(Request.Method.POST, URL_register, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {

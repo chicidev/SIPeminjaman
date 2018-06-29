@@ -3,16 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     tools:context=".Peminjaman">
 
     <RelativeLayout
+        android:id="@+id/R_layout"
         android:layout_width="match_parent"
+        android:padding="10dp"
         android:layout_height="wrap_content">
 
 
         <LinearLayout
-            android:id="@+id/content"
+            android:id="@+id/pm_content_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -22,64 +23,78 @@
                 android:layout_height="wrap_content"
                 android:text="Form Peminjaman :"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/nmGD"
+                android:textStyle="bold"/>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimary"
-                android:hint="Nama Gedung"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                android:background="@drawable/border_bottom">
+                <Spinner
+                    android:id="@+id/pm_gedung"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dialog">
+
+                </Spinner>
+            </LinearLayout>
 
             <EditText
-                android:id="@+id/keperluan"
+                android:id="@+id/pm_keperluan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimary"
                 android:hint="Keperluan"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/lamaPinjam"
+                    android:id="@+id/pm_lama"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimary"
-                    android:clickable="false"
+                    android:textColor="@drawable/edit_text_selector"
                     android:hint="Durasi"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:onClick="tampilAs"
+                    android:layout_marginHorizontal="@dimen/kf_item"
+                    android:background="@color/colorPrimary"
+                    android:src="@android:drawable/ic_menu_add" />
 
-                <NumberPicker
-                    android:id="@+id/numDur"
-                    android:layout_width="20dp"
-                    android:layout_height="45dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:scrollIndicators="none"
-                    android:showDividers="middle" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/pm_tanggal"
                     android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:inputType="date"
+                    android:textColor="@drawable/edit_text_selector"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3"
                     android:backgroundTint="@color/colorPrimary"
                     android:clickable="false"
                     android:hint="Tanggal Pinjam" />
 
                 <ImageButton
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:onClick="tampilDate"
+                    android:layout_marginHorizontal="@dimen/kf_item"
                     android:background="@color/colorPrimary"
                     android:src="@android:drawable/ic_menu_my_calendar" />
-
             </LinearLayout>
 
             <EditText
+                android:id="@+id/pm_catatan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimary"
@@ -107,7 +122,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginHorizontal="@dimen/margin_menu"
                     android:background="@color/colorPrimary"
                     android:onClick="tambahFasilitas"
                     android:src="@android:drawable/ic_menu_add" />
@@ -115,35 +130,47 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginRight="@dimen/kf_item"
+                    android:onClick="delFasilitas"
                     android:background="@color/colorPrimary"
                     android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
+
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:layout_alignParentBottom="true">
+                android:orientation="vertical">
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimary"
-                    android:text="Hapus" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPrimary"
-                    android:onClick="ajukan"
-                    android:text="Ajukan" />
             </LinearLayout>
-        </LinearLayout>
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pm_content_up"
+            android:layout_marginTop="@dimen/pad_body"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:onClick="hapus"
+                android:textColor="@color/putih"
+                android:background="@color/colorPrimary"
+                android:text="Hapus" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:textColor="@color/putih"
+                android:background="@color/colorPrimary"
+                android:onClick="ajukan"
+                android:text="Ajukan" />
+        </LinearLayout>
     </RelativeLayout>
 </ScrollView>

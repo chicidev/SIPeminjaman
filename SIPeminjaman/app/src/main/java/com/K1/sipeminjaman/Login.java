@@ -17,11 +17,15 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import static com.K1.sipeminjaman.Res.*;
+import com.K1.sipeminjaman.Res.*;
 
 public class Login extends AppCompatActivity {
     ProgressDialog pDialog;
@@ -32,24 +36,37 @@ public class Login extends AppCompatActivity {
     int success;
     ConnectivityManager conMgr;
 
-    private String url = Res.URL + "login.php";
-
     private static final String TAG = Login.class.getSimpleName();
 
 
-
+    SharedPreferences dataPreferences;
     SharedPreferences sharedpreferences;
     Boolean session = false;
     String nim, username;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        context = this;
         super.onCreate(savedInstanceState);
         sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        dataPreferences = getSharedPreferences(data_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
+        conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         // Cek session login jika TRUE maka langsung buka MainActivity
         if (session) {
+                if (conMgr.getActiveNetworkInfo() != null
+                        && conMgr.getActiveNetworkInfo().isAvailable()
+                        && conMgr.getActiveNetworkInfo().isConnected()) {
+
+                    String nim = sharedpreferences.getString(TAG_ID,null);
+                    Res.nim = nim;
+                    getRiwayat(nim,this);
+                } else {
+                    Toast.makeText(getApplicationContext() ,"No Internet Connection", Toast.LENGTH_LONG).show();
+                }
+
             Intent intent = new Intent(this, Menu.class);
             finish();
             startActivity(intent);
@@ -57,7 +74,7 @@ public class Login extends AppCompatActivity {
 
         setContentView(R.layout.login);
 
-        conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
 
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_register = (Button) findViewById(R.id.btn_register);
@@ -106,7 +123,7 @@ public class Login extends AppCompatActivity {
         pDialog.setMessage("Logging in ...");
         showDialog();
 
-        StringRequest strReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest strReq = new StringRequest(Request.Method.POST, URL_login, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -138,11 +155,12 @@ public class Login extends AppCompatActivity {
                         editor.putString(TAG_JK, jk);
                         editor.putString(TAG_ALAMAT, alamat);
                         editor.commit();
+                        Res.username = username;
+                        Res.nim = nim;
+                        getRiwayat(nim,context);
 
                         // Memanggil main activity
                         Intent intent = new Intent(Login.this, Menu.class);
-                        intent.putExtra(TAG_ID, nim);
-                        intent.putExtra(TAG_USERNAME, username);
                         finish();
                         startActivity(intent);
                     } else {
@@ -152,6 +170,9 @@ public class Login extends AppCompatActivity {
                     }
                 } catch (JSONException e) {
                     // JSON error
+                    Intent intent = new Intent(Login.this, Menu.class);
+                    finish();
+                    startActivity(intent);
                     e.printStackTrace();
                 }
 
@@ -194,5 +215,6 @@ public class Login extends AppCompatActivity {
         if (pDialog.isShowing())
             pDialog.dismiss();
     }
+
 }
 

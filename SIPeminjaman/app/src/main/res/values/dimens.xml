@@ -2,5 +2,7 @@
 <resources>
     <dimen name="pad_body">20dp</dimen>
     <dimen name="margin_menu">10dp</dimen>
+    <dimen name="kf_item">5dp</dimen>
+    <dimen name="text">18sp</dimen>
 
 </resources>
